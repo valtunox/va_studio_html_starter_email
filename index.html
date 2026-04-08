@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Template · VA Studio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <div class="brand">Email Builder</div>
+      <div class="tabs">
+        <button class="tab active" onclick="switchTab(this,'editor')">Edit</button>
+        <button class="tab" onclick="switchTab(this,'preview')">Preview</button>
+      </div>
+    </header>
+
+    <section id="editor" class="panel active">
+      <!-- Marketing Email Template -->
+      <div class="email-frame">
+        <div class="email-header">
+          <div class="logo-circle">VA</div>
+          <p class="preheader muted">Your weekly product update is here</p>
+        </div>
+
+        <div class="email-hero">
+          <h1>New Features Just Dropped 🚀</h1>
+          <p>We've been building great things this month. Here's what's new for your team.</p>
+        </div>
+
+        <div class="email-card">
+          <div class="card-badge">NEW</div>
+          <h3>AI-Powered Dashboards</h3>
+          <p class="muted">Generate insights from your data automatically. No SQL required.</p>
+          <a href="#" class="email-btn">Learn More →</a>
+        </div>
+
+        <div class="email-card">
+          <div class="card-badge update">UPDATE</div>
+          <h3>Faster Deployments</h3>
+          <p class="muted">Deploy times reduced by 40% with our new build pipeline.</p>
+          <a href="#" class="email-btn">Read the Blog →</a>
+        </div>
+
+        <div class="email-cta">
+          <h2>Ready to upgrade?</h2>
+          <p class="muted">Start your 14-day free trial — no credit card required.</p>
+          <a href="#" class="btn-primary">Get Started Free</a>
+        </div>
+
+        <div class="email-footer">
+          <p class="muted">You're receiving this because you signed up at va-studio.com</p>
+          <div class="email-links">
+            <a href="#">Unsubscribe</a>
+            <span>·</span>
+            <a href="#">Preferences</a>
+            <span>·</span>
+            <a href="#">View in Browser</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="preview" class="panel" style="display:none">
+      <div class="preview-info muted">
+        <p>✉️ This is how your email will appear in the inbox. Edit the HTML above to customize.</p>
+      </div>
+    </section>
+
+    <footer class="footer muted">
+      <p>Edit this email template in VA Studio — preview updates live.</p>
+    </footer>
+  </main>
+
+  <script>
+    function switchTab(btn, id) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.panel').forEach(p => { p.style.display = 'none'; p.classList.remove('active'); });
+      btn.classList.add('active');
+      const el = document.getElementById(id);
+      el.style.display = 'block';
+      el.classList.add('active');
+    }
+  </script>
+</body>
+</html>
